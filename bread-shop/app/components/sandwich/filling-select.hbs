@@ -1,0 +1,39 @@
+<div ...attributes>
+  <h4 class='mb-3'>Filling</h4>
+
+  <div class='mb-3'>
+    <label for='form-select-main-filling' class='form-label'>Main</label>
+
+    <select
+      id='form-select-main-filling'
+      class='form-select'
+      onchange={{this.changeMainFilling}}
+    >
+      <option></option>
+      <option value='halloumi'>halloumi</option>
+      <option value='tofu'>tofu</option>
+      <option value='salmon'>salmon</option>
+      <option value='turkey'>turkey</option>
+    </select>
+  </div>
+
+  <h6 class='mb-3'>
+    Extras
+  </h6>
+
+  {{#each this.availableExtras as |element index|}}
+    <div class='form-check'>
+      <input
+        class='form-check-input'
+        type='checkbox'
+        checked={{element.checked}}
+        id='extra-option-{{index}}'
+        value={{element.name}}
+        onChange={{fn this.changeExtra element.name}}
+      />
+      <label class='form-check-label' for='extra-option-{{index}}'>
+        {{element.name}}
+      </label>
+    </div>
+  {{/each}}
+</div>

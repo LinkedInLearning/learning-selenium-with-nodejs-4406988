@@ -1,0 +1,37 @@
+{{page-title "Order a Sandwich"}}
+
+<div class='py-5 text-center'>
+  <div
+    class='order-sandwich-banner d-inline-block border border-dark rounded-circle mb-5'
+  ></div>
+
+  <h2>Order your sandwich</h2>
+  <p class='lead'>Below you can configure your sandwich with your favorite
+    ingredients. When it is ready, we will bring it to you!</p>
+</div>
+
+<div class='row g-5'>
+  <div class='col-md-5 col-lg-4 order-md-last'>
+    <Sandwich::Overview @value={{@model.sandwich}} />
+
+    <Sandwich::Promo @value={{@model.sandwich}} />
+  </div>
+
+  <div class='col-md-7 col-lg-8'>
+    <Sandwich::BreadTypeSelect
+      class='mb-5'
+      @value={{@model.sandwich.breadType}}
+      @onChange={{this.changeBreadType}}
+    />
+
+    <Sandwich::FillingSelect
+      class='mb-5'
+      @onChangeMainFilling={{this.changeMainFilling}}
+      @onChangeExtras={{this.changeExtras}}
+    />
+
+    <hr class='my-4' />
+
+    <button class='w-100 btn btn-primary btn-lg' type='submit'>Continue</button>
+  </div>
+</div>

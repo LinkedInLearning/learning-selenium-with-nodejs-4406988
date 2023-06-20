@@ -1,0 +1,29 @@
+.bread-type-select {
+
+  .bread-type-label {
+    width: 100%;
+    height: 200px;
+    background-position: center center;
+    background-size: cover;
+    border: 1px solid $dark;
+    cursor: pointer;
+
+    border-radius: $border-radius-lg;
+  }
+
+  .white-bread-label {
+    background-image: url("/img/white-bread.jpg");
+  }
+
+  .brown-bread-label {
+    background-image: url("/img/brown-bread.jpg");
+  }
+
+  .rye-bread-label {
+    background-image: url("/img/rye-bread.jpg");
+  }
+
+  .focaccia-bread-label {
+    background-image: url("/img/focaccia-bread.jpg");
+  }
+}

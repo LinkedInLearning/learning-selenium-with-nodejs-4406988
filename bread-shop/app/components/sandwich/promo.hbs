@@ -1,0 +1,15 @@
+<div class='card p-2'>
+  <div class='input-group has-validation'>
+    {{! template-lint-disable require-input-label }}
+    <Input @value={{this.promo}} disabled={{this.isLoading}} @type='text' class='form-control form-input-promo-code {{if this.isError "is-invalid"}} {{if this.isValid "is-valid"}}' placeholder='Promo code' />
+
+    <button disabled={{this.isLoading}} type='submit' class='btn btn-secondary redeem-promo-code' {{on 'click' this.redeem}}>
+      {{#if this.isLoading}}<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>{{/if}}
+      Redeem
+    </button>
+
+    <div id="validationServerUsernameFeedback" class="invalid-feedback">
+      Please enter a valid promo code.
+    </div>
+  </div>
+</div>

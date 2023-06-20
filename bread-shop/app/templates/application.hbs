@@ -1,0 +1,70 @@
+{{page-title "BreadShop"}}
+
+<nav class='navbar navbar-expand-lg bg-light' aria-label='Tenth navbar example'>
+  <div class='container'>
+    <button
+      class='navbar-toggler'
+      type='button'
+      data-bs-toggle='collapse'
+      data-bs-target='#navbarsExample08'
+      aria-controls='navbarsExample08'
+      aria-expanded='false'
+      aria-label='Toggle navigation'
+    >
+      <span class='navbar-toggler-icon'></span>
+    </button>
+
+    <div
+      class='collapse navbar-collapse justify-content-md-center'
+      id='navbarsExample08'
+    >
+      <ul class='navbar-nav'>
+        <li>
+          <a class='nav-link navbar-brand' href='#'>
+            <img
+              src='/img/logo.svg'
+              alt='Bread Shop'
+              width='30'
+              height='24'
+              class='d-inline-block align-text-top'
+            />
+          </a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link active' aria-current='page' href='#'>Products</a>
+        </li>
+
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>Production & Quality</a>
+        </li>
+
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>About us</a>
+        </li>
+
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>Contact</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class='container'>
+
+  <main>
+    {{outlet}}
+  </main>
+
+  <footer class='my-5 pt-5 text-muted text-center text-small'>
+    <hr/>
+    <p class='mb-1'>&copy; 2017–2024 BreadShop</p>
+    <p class='mb-1'>Bread logo by https://creativemarket.com/BomSymbols</p>
+    <ul class='list-inline'>
+      <li class='list-inline-item'><a href='#'>Privacy</a></li>
+      <li class='list-inline-item'><a href='#'>Terms</a></li>
+      <li class='list-inline-item'><a href='#'>Support</a></li>
+    </ul>
+  </footer>
+</div>

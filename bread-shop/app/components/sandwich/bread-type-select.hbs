@@ -1,0 +1,89 @@
+<div class='bread-type-select' ...attributes>
+  <h4 class='mb-3'>Bread type</h4>
+
+  <div class='row'>
+    <div class='col col-6 col-lg-3 text-center mb-3'>
+      <label
+        for='bread-type-white'
+        class='white-bread-label bread-type-label'
+      ></label>
+
+      <div class='form-check d-inline-block'>
+        <Input
+          class='form-check-input'
+          @type='radio'
+          @checked={{this.isWhite}}
+          name='bread-type'
+          id='bread-type-white'
+          onchange={{fn @onChange 'white bread'}}
+        />
+        <label class='form-check-label' for='bread-type-white'>
+          white bread
+        </label>
+      </div>
+    </div>
+
+    <div class='col col-6 col-lg-3 text-center mb-3'>
+      <label
+        for='bread-type-brown'
+        class='brown-bread-label bread-type-label'
+      ></label>
+
+      <div class='form-check d-inline-block'>
+        <Input
+          class='form-check-input'
+          @type='radio'
+          @checked={{this.isBrown}}
+          name='bread-type'
+          id='bread-type-brown'
+          onchange={{fn @onChange 'brown bread'}}
+        />
+        <label class='form-check-label' for='bread-type-brown'>
+          brown bread
+        </label>
+      </div>
+    </div>
+
+    <div class='col col-6 col-lg-3 text-center mb-3'>
+      <label
+        for='bread-type-rye'
+        class='rye-bread-label bread-type-label'
+      ></label>
+
+      <div class='form-check d-inline-block'>
+        <Input
+          class='form-check-input'
+          @type='radio'
+          @checked={{this.isRye}}
+          name='bread-type'
+          id='bread-type-rye'
+          onchange={{fn @onChange 'rye bread'}}
+        />
+        <label class='form-check-label' for='bread-type-rye'>
+          rye bread
+        </label>
+      </div>
+    </div>
+
+    <div class='col col-6 col-lg-3 text-center mb-3'>
+      <label
+        for='bread-type-focaccia'
+        class='focaccia-bread-label bread-type-label'
+      ></label>
+
+      <div class='form-check d-inline-block'>
+        <Input
+          class='form-check-input'
+          @type='radio'
+          @checked={{this.isFocaccia}}
+          name='bread-type'
+          id='bread-type-focaccia'
+          onchange={{fn @onChange 'focaccia bread'}}
+        />
+        <label class='form-check-label' for='bread-type-focaccia'>
+          focaccia bread
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

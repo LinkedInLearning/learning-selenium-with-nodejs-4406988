@@ -17,15 +17,27 @@ When switching from one exercise files branch to the next after making changes t
 
 To resolve this issue:
 	
+    Stash the changes using this command: git stash
+
+You can always reapply your local changes to the current checked out code using `git stash apply` 
+
+If you fork the repository and would like to track your code updates, then instead:
+
     Add changes to git using this command: git add .
-	Commit changes using this command: git commit -m "some message"
+    Commit changes using this command: git commit -m "some message"
 
 ## Installing
 1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
+	- [Node.js](https://nodejs.org/en/download), the latest LTS(Long Time Support) version. Some prefer to install it [via a package manager](https://nodejs.org/en/download/package-manager#installing-node.js-via-package-manager).
+    - The [Chrome web browser](https://www.google.com/chrome/).
+    - The [Webdriver for Chrome](https://chromedriver.chromium.org/downloads) corresponding to your Chrome browser version. Make sure the driver location is added to your `PATH` environment variable.
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
+3. To install and run the `bread-shop` application(the app under test) locally on your machine, follow the instructions on the application's [README page](/bread-shop/README.md).
+4. To install the dependencies for the tests project, run `cd bread-shop-tests` and then `npm install`.
 
+## Running the Selenium tests
+
+From the `bread-shop-tests` folder, run `npm test`.
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 

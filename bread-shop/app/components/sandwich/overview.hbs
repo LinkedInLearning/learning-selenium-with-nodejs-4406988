@@ -1,0 +1,60 @@
+<h4 class='d-flex justify-content-between align-items-center mb-3'>
+  <span class='text-primary'>Your sandwich</span>
+</h4>
+
+<ul class='list-group mb-3' {{did-update this.waitSomeTime this.total}}>
+  <li class='list-group-item d-flex justify-content-between lh-sm'>
+    <div>
+      <h6 class='my-0'>Bread type</h6>
+
+      {{#if @value.breadType}}
+        <small class='text-muted bread-type-value'>{{@value.breadType}}</small>
+      {{else}}
+        <small class='text-info bread-type-placeholder'>You haven't selected a bread type yet</small>
+      {{/if}}
+    </div>
+    <span class='text-muted bread-type-price'>${{this.breadPrice}}</span>
+  </li>
+
+  <li class='list-group-item d-flex justify-content-between lh-sm'>
+    <div>
+      <h6 class='my-0'>Main filling</h6>
+      {{#if @value.mainFilling}}
+        <small class='text-muted main-filling-value'>{{@value.mainFilling}}</small>
+      {{else}}
+        <small class='text-info'>You haven't selected a main filling yet</small>
+      {{/if}}
+    </div>
+    <span class='text-muted main-filling-price'>${{this.fillingPrice}}</span>
+  </li>
+
+  {{#if @value.extras}}
+    <li class='list-group-item d-flex justify-content-between lh-sm'>
+      <div>
+        <h6 class='my-0'>Extras</h6>
+        <small class='text-muted extra-filling-value'>
+          {{this.extras}}
+        </small>
+      </div>
+      <span class='text-muted extra-filling-price'>${{this.extrasPrices}}</span>
+    </li>
+  {{/if}}
+
+  {{#if this.promoPrice}}
+    <li class='list-group-item d-flex justify-content-between lh-sm'>
+      <h6 class='my-0'>Discount</h6>
+      <span class='text-muted'>-10%</span>
+    </li>
+  {{/if}}
+
+  <li class='list-group-item d-flex justify-content-between'>
+    <span>Total (USD)</span>
+    {{#if this.isWaiting}}
+      <span class="spinner-grow spinner-grow-sm mt-1" role="status" aria-hidden="true"></span>
+    {{else}}
+      <strong class='total-price'>
+        ${{this.total}}
+      </strong>
+    {{/if}}
+  </li>
+</ul>
