@@ -1,13 +1,11 @@
 const { before, beforeEach, after } = require('mocha');
 const { By, Builder, Select } = require('selenium-webdriver');
 const expect = require('chai').expect;
-const { SandwichPage } = require('../page_models/sandwichPage');
 
 describe('sandwich order', function() {
 
     this.timeout(5000);
     let driver;
-    let sandwichPage;
 
     before(async function() {
         driver = await new Builder().forBrowser('chrome').build();
@@ -17,9 +15,8 @@ describe('sandwich order', function() {
     beforeEach(async function() {
         //setup
         await driver.get('http://localhost:4200/order/sandwich');
-
-        sandwichPage = new SandwichPage(driver);
-        sandwichPage.validatePage();
+        let title = await driver.getTitle();
+        expect(title).to.equal("Order a Sandwich | BreadShop");
     });
 
     after(async function() {
@@ -29,19 +26,24 @@ describe('sandwich order', function() {
  
     it('selects the bread type', async function() {
         //act
-        await sandwichPage.selectRyeBreadOption();
+        let ryeBreadOptionElement = await driver.findElement(By.id('bread-type-rye'));
+        await ryeBreadOptionElement.click();
 
         //assert
-        let selectedBreadValue = await sandwichPage.getBreadTypeOverview();
-        expect(selectedBreadValue).to.equal("rye bread");
+        let selectedElement = await driver.findElement(By.className('bread-type-value'));
+        let selectedValue = await selectedElement.getText();
+        expect(selectedValue).to.equal("rye bread");
     });
     
     it('selects the main filling', async function() {
         //act
-        await sandwichPage.selectTofuFillingOption();
+        let mainFillingElement = await driver.findElement(By.id('form-select-main-filling'));
+        let select = new Select(mainFillingElement);
+        await select.selectByValue('tofu');
 
         //assert
-        let selectedMainFillingValue = await sandwichPage.getMainFillingOverview();
-        expect(selectedMainFillingValue).to.equal("tofu");
+        let selectedElement = await driver.findElement(By.className('main-filling-value'));
+        let selectedValue = await selectedElement.getText();
+        expect(selectedValue).to.equal("tofu");
     });
 });
