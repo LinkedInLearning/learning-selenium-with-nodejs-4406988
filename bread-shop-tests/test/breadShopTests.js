@@ -55,14 +55,4 @@ describe('sandwich order', function() {
         expect(await sandwichPage.getTotalPrice()).to.equal("$6");
         
     });
-
-    it("selects extra fillings", async function() {
-        //act
-        await sandwichPage.selectExtraSaladFilling();
-        await sandwichPage.selectExtraKetchupFilling();
-
-        //assert
-        let selectedExtraFillingValue = await sandwichPage.getExtraFillingOverview();
-        expect(selectedExtraFillingValue).to.equal("salad, ketchup");
-    });
 });

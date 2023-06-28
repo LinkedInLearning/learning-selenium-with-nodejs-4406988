@@ -34,18 +34,6 @@ class SandwichPage {
     getTotalPrice() {
         return this.driver.findElement(By.className('total-price')).getText();
     }
-
-    selectExtraSaladFilling() {
-        return this.driver.findElement(By.css('[value=salad]')).click();
-    }
-
-    selectExtraKetchupFilling() {
-        return this.driver.findElement(By.css('[value=ketchup]')).click();
-    }
-
-    getExtraFillingOverview() {
-        return this.driver.findElement(By.className('extra-filling-value')).getText();
-    }
 }
 
 module.exports = { SandwichPage }
