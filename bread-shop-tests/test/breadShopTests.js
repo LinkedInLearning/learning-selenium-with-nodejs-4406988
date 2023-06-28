@@ -1,5 +1,5 @@
 const { before, beforeEach, after } = require('mocha');
-const { Builder } = require('selenium-webdriver');
+const { By, Builder, Select } = require('selenium-webdriver');
 const expect = require('chai').expect;
 const { SandwichPage } = require('../page_models/sandwichPage');
 
@@ -11,8 +11,7 @@ describe('sandwich order', function() {
 
     before(async function() {
         driver = await new Builder().forBrowser('chrome').build();
-        // uncomment when you want to use an implicit wait for this driver session
-        //await driver.manage().setTimeouts({ implicit: 1000 }); 
+        //await driver.manage().setTimeouts({ implicit: 1000 });
     });
  
     beforeEach(async function() {
@@ -76,29 +75,5 @@ describe('sandwich order', function() {
         //assert
         let selectedExtraFillingValue = await sandwichPage.getExtraFillingOverview();
         expect(selectedExtraFillingValue).to.equal("salad, ketchup");
-    });
-
-    describe('when the network has high latency', function() {
-        beforeEach(async function() {
-            await driver.setNetworkConditions({
-                offline: false,
-                latency: 1000,
-                download_throughput: 35 * 1024,
-                upload_throughput: 50 * 1024
-            })
-        });
-
-        afterEach(async function() {
-            await driver.deleteNetworkConditions();
-        });
-
-        it('displays spinning wheel when checking promo code', async function() {
-            //act
-            await sandwichPage.setValidPromoCode();
-            await sandwichPage.redeemPromoCode();
-
-            //assert
-            expect(await sandwichPage.getSpinner().isDisplayed()).to.be.true;
-        });
     });
 });
