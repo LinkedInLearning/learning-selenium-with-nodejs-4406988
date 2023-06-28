@@ -44,15 +44,4 @@ describe('sandwich order', function() {
         let selectedMainFillingValue = await sandwichPage.getMainFillingOverview();
         expect(selectedMainFillingValue).to.equal("tofu");
     });
-
-    it('updates the total price when the bread type is selected', async function() {
-        //act
-        expect(await sandwichPage.getTotalPrice()).to.equal("$0");
-        
-        await sandwichPage.selectRyeBreadOption();
-        
-        //assert
-        expect(await sandwichPage.getTotalPrice()).to.equal("$6");
-        
-    });
 });

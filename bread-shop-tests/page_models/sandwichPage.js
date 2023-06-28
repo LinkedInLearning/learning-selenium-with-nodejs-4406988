@@ -30,10 +30,6 @@ class SandwichPage {
     getMainFillingOverview() {
         return this.driver.findElement(By.className('main-filling-value')).getText();
     }
-
-    getTotalPrice() {
-        return this.driver.findElement(By.className('total-price')).getText();
-    }
 }
 
 module.exports = { SandwichPage }
