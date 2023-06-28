@@ -50,18 +50,6 @@ class SandwichPage {
     getBreadTypePlaceholders() {
         return this.driver.findElements(By.className('bread-type-placeholder'));
     }
-
-    setValidPromoCode() {
-        return this.driver.findElement(By.className('form-input-promo-code')).sendKeys('SPRING10');
-    }
- 
-    redeemPromoCode() {
-        return this.driver.findElement(By.className('redeem-promo-code')).click();
-    }
-
-    getSpinner() {
-        return this.driver.findElement(By.css('.redeem-promo-code .spinner-border'));
-    }
 }
 
 module.exports = { SandwichPage }
