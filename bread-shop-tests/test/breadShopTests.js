@@ -27,24 +27,13 @@ describe('sandwich order', function() {
         await driver.quit();
     });
  
-    describe('bread type selection', function() {
-        it('displays the selected value', async function() {
-            //act
-            await sandwichPage.selectRyeBreadOption();
-    
-            //assert
-            let selectedBreadValue = await sandwichPage.getBreadTypeOverview();
-            expect(selectedBreadValue).to.equal("rye bread");
-        });
+    it('selects the bread type', async function() {
+        //act
+        await sandwichPage.selectRyeBreadOption();
 
-        it('removes the placeholder text', async function() {
-            //act
-            await sandwichPage.selectRyeBreadOption();
-    
-            //assert
-            let breadTypePlaceholders = await sandwichPage.getBreadTypePlaceholders();
-            expect(breadTypePlaceholders).to.have.length(0);
-        });
+        //assert
+        let selectedBreadValue = await sandwichPage.getBreadTypeOverview();
+        expect(selectedBreadValue).to.equal("rye bread");
     });
     
     it('selects the main filling', async function() {

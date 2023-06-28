@@ -46,10 +46,6 @@ class SandwichPage {
     getExtraFillingOverview() {
         return this.driver.findElement(By.className('extra-filling-value')).getText();
     }
-
-    getBreadTypePlaceholders() {
-      return this.driver.findElements(By.className('bread-type-placeholder'));
-    }
 }
 
 module.exports = { SandwichPage }
