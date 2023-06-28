@@ -11,7 +11,7 @@ describe('sandwich order', function() {
 
     before(async function() {
         driver = await new Builder().forBrowser('chrome').build();
-        //await driver.manage().setTimeouts({ implicit: 1000 });
+        await driver.manage().setTimeouts({ implicit: 1000 });
     });
  
     beforeEach(async function() {

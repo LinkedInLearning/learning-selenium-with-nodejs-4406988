@@ -1,4 +1,4 @@
-const { By, Select, until } = require('selenium-webdriver');
+const { By, Select } = require('selenium-webdriver');
 
 class SandwichPage {
     constructor(driver) {
@@ -32,7 +32,7 @@ class SandwichPage {
     }
 
     getTotalPrice() {
-        return this.driver.wait(until.elementLocated(By.className('total-price')), 1000, "Total price was not located", 6).getText();
+        return this.driver.findElement(By.className('total-price')).getText();
     }
 
     selectExtraSaladFilling() {
@@ -48,7 +48,7 @@ class SandwichPage {
     }
 
     getBreadTypePlaceholders() {
-        return this.driver.findElements(By.className('bread-type-placeholder'));
+      return this.driver.findElements(By.className('bread-type-placeholder'));
     }
 }
 
