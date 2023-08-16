@@ -1,7 +1,12 @@
-# Learning Selenium with NodeJS
-This is the repository for the LinkedIn Learning course `Learning Selenium with NodeJS`. The full course is available from [LinkedIn Learning][lil-course-url].
+# Learning Selenium with Node.js
+This is the repository for the LinkedIn Learning course Learning Selenium with Node.js. The full course is available from [LinkedIn Learning][lil-course-url].
 
-_See the readme file in the main branch for updated instructions and information._
+![Learning Selenium with Node.js][lil-thumbnail-url] 
+
+You can control the browser using Selenium and Node.js, in order to address the challenges of functional web app testing. Most web apps are written using JavaScript, so it’s very convenient to use the same tech stack for creating your test suites. In this course, join principal quality engineer and testing instructor Alexandra Casapu and work directly with the tools to gain real, practical experience. Examine what kinds of tests are best done in Selenium. Learn Selenium functions for interacting with web elements, and explore ways to get comfortable wielding Selenium as a powerful engineering tool. Plus, find out how to make your Selenium code maintainable, deal with complex applications in Selenium, and apply what you’ve learned to a project.
+
+
+
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
 
@@ -17,14 +22,8 @@ When switching from one exercise files branch to the next after making changes t
 
 To resolve this issue:
 	
-    Stash the changes using this command: git stash
-
-You can always reapply your local changes to the current checked out code using `git stash apply` 
-
-If you fork the repository and would like to track your code updates, then instead:
-
     Add changes to git using this command: git add .
-    Commit changes using this command: git commit -m "some message"
+	Commit changes using this command: git commit -m "some message"
 
 ## Installing
 1. To use these exercise files, you must have the following installed:
@@ -39,8 +38,17 @@ If you fork the repository and would like to track your code updates, then inste
 
 From the `bread-shop-tests` folder, run `npm test`.
 
-[0]: # (Replace these placeholder URLs with actual course URLs)
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
 
+### Instructor
+
+Alexandra Casapu 
+                            
+
+
+                            
+
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/alexandra-casapu).
+
+[lil-course-url]: https://www.linkedin.com/learning/learning-selenium-with-node-js?dApp=59033956&leis=LAA
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQGyqWEijCDaPw/learning-public-crop_675_1200/0/1692052747421?e=2147483647&v=beta&t=WKd1XT9JdQhmWXXdlLFDTO8fFff6gcZapcNzo1BGzsQ
