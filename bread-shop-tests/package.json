@@ -5,6 +5,7 @@
   "scripts": {
     "test": "mocha"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -14,6 +15,5 @@
   "directories": {
     "test": "test"
   },
-  "devDependencies": {},
   "description": ""
 }
